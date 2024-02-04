@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://b88go0rbllis3"]
+
+[ext_resource type="Script" path="res://MeteorConstellation1.gd" id="1_i3hh2"]
+[ext_resource type="Texture2D" uid="uid://dvs8k1bh6j4ek" path="res://kenney_simple-space/PNG/Retina/meteor_large.png" id="1_njuf8"]
+[ext_resource type="Texture2D" uid="uid://lr2yb6lbdlp0" path="res://kenney_simple-space/PNG/Retina/meteor_small.png" id="2_vjrwu"]
+[ext_resource type="Texture2D" uid="uid://ckcshglf0eqsq" path="res://kenney_simple-space/PNG/Retina/meteor_squareDetailedSmall.png" id="3_s27gr"]
+[ext_resource type="Texture2D" uid="uid://cew5crcxvmbv6" path="res://kenney_simple-space/PNG/Retina/meteor_detailedLarge.png" id="4_gyc5h"]
+[ext_resource type="Texture2D" uid="uid://dk0stumyikv6y" path="res://kenney_simple-space/PNG/Retina/meteor_detailedSmall.png" id="5_v5c2l"]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(-40, -65)
+scale = Vector2(1.01733, 0.981505)
+script = ExtResource("1_i3hh2")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="MeteorLarge" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(89.45, 126.337)
+scale = Vector2(1.59048, 1.59048)
+texture = ExtResource("1_njuf8")
+
+[node name="MeteorLarge2" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(10, 83)
+texture = ExtResource("1_njuf8")
+
+[node name="MeteorLarge3" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(95, 205)
+texture = ExtResource("1_njuf8")
+
+[node name="MeteorSmall" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(32.4379, 181.354)
+scale = Vector2(0.480383, 0.480383)
+texture = ExtResource("2_vjrwu")
+
+[node name="MeteorSquareDetailedSmall" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(65, 61)
+texture = ExtResource("3_s27gr")
+
+[node name="MeteorDetailedLarge" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(156.292, 95.7713)
+scale = Vector2(1.27562, 1.27562)
+texture = ExtResource("4_gyc5h")
+
+[node name="MeteorDetailedSmall" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-53.3137, -43.609)
+rotation = 0.794473
+texture = ExtResource("5_v5c2l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(50.1313, 28.5276, 62.9099, 28.5276, 156.292, 35.6595, 201.508, 56.0364, 219.201, 97.809, 193.644, 136.525, 159.24, 179.316, 142.53, 206.825, 125.82, 240.447, 93.3818, 252.673, 66.8416, 244.522, 50.1312, 231.277, 35.3867, 210.901, 13.7615, 184.411, -22.6082, 115.129, -38.3357, 82.5263, -22.6082, 50.9422, 12.7785, 32.603)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-52.0972, -11.2073, -75.6884, -21.3957, -88.467, -44.8291, -74.7055, -66.2248, -52.0972, -77.4321, -31.4549, -67.2437, -19.6593, -44.8291, -27.5231, -22.4146)

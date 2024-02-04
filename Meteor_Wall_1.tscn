@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c45ptgm5cti4d"]
+
+[ext_resource type="Texture2D" uid="uid://ckcshglf0eqsq" path="res://kenney_simple-space/PNG/Retina/meteor_squareDetailedSmall.png" id="1_so2wt"]
+[ext_resource type="Texture2D" uid="uid://cew5crcxvmbv6" path="res://kenney_simple-space/PNG/Retina/meteor_detailedLarge.png" id="2_e6bug"]
+[ext_resource type="Texture2D" uid="uid://b1wfnpg2vjg2w" path="res://kenney_simple-space/PNG/Retina/star_small.png" id="3_h8xf7"]
+
+[node name="MeteorWall1" type="Area2D"]
+scale = Vector2(0.980769, 1)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.01
+gravity_scale = 0.0
+freeze = true
+
+[node name="MeteorSquareDetailedSmall" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-7.62939e-06, 0)
+scale = Vector2(2.6587, 2.6587)
+texture = ExtResource("1_so2wt")
+
+[node name="MeteorDetailedLarge" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(106.039, 67)
+scale = Vector2(2.86581, 2.86581)
+texture = ExtResource("2_e6bug")
+
+[node name="MeteorSquareDetailedSmall2" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(246.69, -48.46)
+rotation = 2.22441
+scale = Vector2(2.6587, 2.6587)
+texture = ExtResource("1_so2wt")
+
+[node name="MeteorDetailedLarge2" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(352.729, 18.5401)
+rotation = 2.22441
+scale = Vector2(2.86581, 2.86581)
+texture = ExtResource("2_e6bug")
+
+[node name="StarSmall" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(237.617, 77.9459)
+rotation = 0.467689
+texture = ExtResource("3_h8xf7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(-84.6275, 40, -36.7059, 69, 12.2353, 159, 108.078, 205, 196.784, 162, 238.588, 88, 263.059, 128, 383.373, 150, 464.941, 100, 483.294, 0, 435.373, -90, 338.51, -111, 290.588, -111, 263.059, -141, 182.51, -101, 153.961, -66, 1.01961, -85, -39.7647, -85, -84.6275, -1)

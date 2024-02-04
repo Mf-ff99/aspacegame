@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3aarnpl2sgdg"]
+
+[ext_resource type="Texture2D" uid="uid://hx3nmkxo4cl" path="res://kenney_simple-space/PNG/Retina/ship_K.png" id="1_n6x18"]
+[ext_resource type="Script" path="res://Player.gd" id="1_re8a8"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_re8a8")
+
+[node name="Ship1" type="Sprite2D" parent="."]
+scale = Vector2(0.304688, 0.304688)
+texture = ExtResource("1_n6x18")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.318359, 0.318359)
+polygon = PackedVector2Array(-32, 48, 0, -47, 32, 48, 0, 32)

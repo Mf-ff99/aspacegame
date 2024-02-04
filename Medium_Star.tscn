@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c77n4eh5de7oc"]
+
+[ext_resource type="Texture2D" uid="uid://dnvfqyefw6e74" path="res://kenney_simple-space/PNG/Retina/star_medium.png" id="1_2ur4g"]
+[ext_resource type="Script" path="res://StarMedium.gd" id="2_g7ad3"]
+
+[node name="MediumStar" type="Node2D"]
+
+[node name="StarMedium" type="Sprite2D" parent="."]
+position = Vector2(0, 5.96037e-08)
+rotation = 0.539087
+scale = Vector2(0.390625, 0.390625)
+texture = ExtResource("1_2ur4g")
+script = ExtResource("2_g7ad3")
