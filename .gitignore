@@ -1,4 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
-kenney_simple-space/
 .gitattributes
+kenney_simple-space/
