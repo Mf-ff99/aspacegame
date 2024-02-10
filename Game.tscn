@@ -1,58 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://csrt3f35k3c3h"]
+[gd_scene load_steps=3 format=3 uid="uid://csrt3f35k3c3h"]
 
-[ext_resource type="PackedScene" uid="uid://c77n4eh5de7oc" path="res://Medium_Star.tscn" id="1_e1fvs"]
+[ext_resource type="PackedScene" uid="uid://ckc5f7fvi4qrh" path="res://Background.tscn" id="1_d7afh"]
 [ext_resource type="PackedScene" uid="uid://c3aarnpl2sgdg" path="res://Player.tscn" id="2_hsiky"]
-[ext_resource type="PackedScene" uid="uid://c45ptgm5cti4d" path="res://Meteor_Wall_1.tscn" id="3_b5wxq"]
-[ext_resource type="PackedScene" uid="uid://b88go0rbllis3" path="res://MeteorConstellation1.tscn" id="4_78go7"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(3, 31)
 scale = Vector2(0.485973, 0.485973)
 
-[node name="Background" type="CanvasLayer" parent="."]
-layer = -1
-follow_viewport_enabled = true
-
-[node name="ColorRect" type="ColorRect" parent="Background"]
-offset_right = 1152.0
-offset_bottom = 644.0
-color = Color(0.227451, 0.227451, 0.227451, 1)
-
-[node name="MediumStar" parent="." instance=ExtResource("1_e1fvs")]
-position = Vector2(83, 69)
-
-[node name="MediumStar2" parent="." instance=ExtResource("1_e1fvs")]
-position = Vector2(1016, 608)
-
-[node name="MediumStar3" parent="." instance=ExtResource("1_e1fvs")]
-position = Vector2(191, 585)
-
-[node name="MediumStar4" parent="." instance=ExtResource("1_e1fvs")]
-position = Vector2(364, 499)
+[node name="Background" parent="." instance=ExtResource("1_d7afh")]
+position = Vector2(2.05773, -80.2514)
 
 [node name="Player" parent="." instance=ExtResource("2_hsiky")]
 unique_name_in_owner = true
 position = Vector2(327.179, 207.831)
 rotation = -1.49337
 scale = Vector2(1.3178, 1.3178)
-motion_mode = 1
-
-[node name="MeteorWall1" parent="." instance=ExtResource("3_b5wxq")]
-position = Vector2(-185, -87)
-
-[node name="MeteorWall2" parent="." instance=ExtResource("3_b5wxq")]
-position = Vector2(269, -138)
-rotation = 0.154704
-
-[node name="MeteorWall3" parent="." instance=ExtResource("3_b5wxq")]
-position = Vector2(14, 536)
-rotation = -1.80351
-
-[node name="Area2D" parent="." instance=ExtResource("4_78go7")]
-position = Vector2(65.8473, 843.669)
-rotation = 1.17125
-scale = Vector2(1.01733, 0.981505)
-
-[node name="Area2D2" parent="." instance=ExtResource("4_78go7")]
-position = Vector2(-199.6, 816.919)
-rotation = -1.50188

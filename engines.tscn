@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://kvbylojcofts"]
+
+[ext_resource type="Script" path="res://GPUParticles2D.gd" id="1_5a78s"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o6lp7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mno1x"]
+radius = 8.0
+height = 16.0
+
+[sub_resource type="Curve" id="Curve_r4f7w"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.951807, 0.0736842), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_hchke"]
+curve = SubResource("Curve_r4f7w")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5k67m"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+spread = 168.55
+flatness = 0.08
+gravity = Vector3(0, 0, 0)
+tangential_accel_max = 10.53
+hue_variation_min = -0.45
+hue_variation_curve = SubResource("CurveTexture_hchke")
+turbulence_enabled = true
+turbulence_noise_strength = 2.35
+turbulence_noise_speed_random = 0.55
+turbulence_influence_max = 0.6
+
+[node name="engines" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Engine01" type="Sprite2D" parent="Area2D"]
+position = Vector2(-5, -1)
+scale = Vector2(1.82031, 1.82031)
+texture = SubResource("CompressedTexture2D_o6lp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 7)
+shape = SubResource("CapsuleShape2D_mno1x")
+
+[node name="EngineExhaustPoint" type="Marker2D" parent="Area2D"]
+self_modulate = Color(0.384314, 0.713726, 0.92549, 1)
+show_behind_parent = true
+position = Vector2(1, 1)
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Area2D/EngineExhaustPoint"]
+scale = Vector2(1, 0.99706)
+amount = 9
+process_material = SubResource("ParticleProcessMaterial_5k67m")
+lifetime = 0.05
+explosiveness = 0.4
+randomness = 0.69
+interpolate = false
+visibility_rect = Rect2(-30, -30, 30, 30)
+script = ExtResource("1_5a78s")

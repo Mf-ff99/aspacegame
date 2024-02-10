@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3aarnpl2sgdg"]
+[gd_scene load_steps=5 format=3 uid="uid://c3aarnpl2sgdg"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_re8a8"]
 [ext_resource type="Texture2D" uid="uid://b06frykleoier" path="res://kenney_simple-space/PNG/SHIP.png" id="3_q1fr3"]
 [ext_resource type="Script" path="res://GPUParticles2D.gd" id="3_tjlt4"]
-[ext_resource type="PackedScene" uid="uid://kvbylojcofts" path="res://engines.tscn" id="4_n7em7"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mg4r6"]
 emission_shape = 6
@@ -20,44 +19,32 @@ tangential_accel_max = 10.53
 
 [node name="Player" type="CharacterBody2D"]
 z_as_relative = false
-position = Vector2(0, -1)
-rotation = 0.000101063
+position = Vector2(1, 0)
 motion_mode = 1
 script = ExtResource("1_re8a8")
 rotation_speed = 6
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-rotation = 3.14881
+rotation = 1.57328
 scale = Vector2(0.318359, 0.318359)
 polygon = PackedVector2Array(-50.1328, 50.3824, -0.187234, -75.3864, 50.3824, 50.1328, 0.0780141, 31.411)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.285, 2.285)
+zoom = Vector2(1.8, 1.8)
 limit_left = 0
 limit_top = 0
-limit_bottom = 400
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-rotation = -0.104682
-emitting = false
-amount = 19
+position = Vector2(1.90735e-06, 4.82794e-08)
+rotation = 0.025315
+amount = 15
 process_material = SubResource("ParticleProcessMaterial_mg4r6")
-lifetime = 0.1
+lifetime = 1.2
 script = ExtResource("3_tjlt4")
-
-[node name="engines" parent="." instance=ExtResource("4_n7em7")]
-position = Vector2(2.99889, -11.0003)
-rotation = 3.13937
-scale = Vector2(0.643928, 0.643928)
-
-[node name="engines2" parent="." instance=ExtResource("4_n7em7")]
-position = Vector2(-1.00111, -10.9999)
-rotation = 3.13937
-scale = Vector2(0.643928, 0.643928)
 
 [node name="Ship" type="Sprite2D" parent="."]
 position = Vector2(2.06754e-07, 0)
-rotation = -3.13748
+rotation = 1.57652
 scale = Vector2(0.499209, 0.499209)
 texture = ExtResource("3_q1fr3")
 
